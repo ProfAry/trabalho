@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Notas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        input {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registro de Notas</h1>
+    <form id="notasForm">
+        <h3>Notas por Matéria</h3>
+        <label for="Matemática">Matemática:</label>
+        <input type="number" id="Matemática" required><br>
+        <label for="História">História:</label>
+        <input type="number" id="História" required><br>
+        <label for="Geografia">Geografia:</label>
+        <input type="number" id="Geografia" required><br>
+        <label for="Português">Português:</label>
+        <input type="number" id="Português" required><br>
+        <label for="Redação">Redação:</label>
+        <input type="number" id="Redação" required><br>
+        <label for="Biologia">Biologia:</label>
+        <input type="number" id="Biologia" required><br>
+        <label for="Ciências">Ciências:</label>
+        <input type="number" id="Ciências" required><br>
+        <label for="Química">Química:</label>
+        <input type="number" id="Química" required><br>
+        <label for="Física">Física:</label>
+        <input type="number" id="Física" required><br>
+        <label for="Inglês">Inglês:</label>
+        <input type="number" id="Inglês" required><br>
+        <button type="button" onclick="enviarNotas()">OK</button>
+    </form>
+
+    <script>
+        function enviarNotas() {
+            const notas = {
+                Matemática: parseFloat(document.getElementById('Matemática').value),
+                História: parseFloat(document.getElementById('História').value),
+                Geografia: parseFloat(document.getElementById('Geografia').value),
+                Português: parseFloat(document.getElementById('Português').value),
+                Redação: parseFloat(document.getElementById('Redação').value),
+                Biologia: parseFloat(document.getElementById('Biologia').value),
+                Ciências: parseFloat(document.getElementById('Ciências').value),
+                Química: parseFloat(document.getElementById('Química').value),
+                Física: parseFloat(document.getElementById('Física').value),
+                Inglês: parseFloat(document.getElementById('Inglês').value)
+            };
+            localStorage.setItem('notas', JSON.stringify(notas));
+            window.location.href = 'graficos.html';
+        }
+    </script>
+</body>
+</html>
